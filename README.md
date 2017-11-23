@@ -1,6 +1,15 @@
 # Vue2.0 点餐app模块
 
-## 安装运行
+# 项目的运行
+   clone项目源码
+      git clone https://github.com/hanyingming/eapp.git
+
+   安装依赖
+      cd eapp
+      npm install
+   前端运行
+      npm run dev
+   打开浏览器进入localhost:8080 查看效果。
 
 # 项目使用的开发工具：
     webstorm
