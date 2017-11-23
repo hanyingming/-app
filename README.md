@@ -1,78 +1,56 @@
-# eapp1
+# Vue2.0 点餐app模块
 
-> A Vue.js project
+## 安装运行
 
-## Build Setup
+# 项目使用的开发工具：
+    webstorm
 
-``` bash
-# install dependencies
-npm install
+# 项目中使用到的技术与方法:
+    svg图片制作为字体图标，并引入此字体文件。
+    mock后台数据
+    stylus：css预处理器
+    eslint：代码静态检查
+    reset.css ：初始化代码样式
+    webpack ：项目模块构建工具
+    vue-cli : 构建webpack项目 vue init webpack eapp
+    Vue2.0 + Vue-router + vue-resource
 
-# serve with hot reload at localhost:8080
-npm run dev
+# 文件结构说明：
+    .editorconfig : 编辑器的配置
+    .eslintignore : eslint代码检查忽略的目录
+    .eslintrc.js  : eslint代码检查的配置
+        .eslintrc.js文件添加了： 'semi': ["error", "always"]  //用于代码中需要强中添加分号
+    .gitignore    : 向github上传文件时忽略的文件
+    .postcssrc.js : postcss模块用于处理浏览器的css代码的兼容，该文件
+    data.json     : mock的项目数据
+    index.html    : SPA项目的单页面的基本结构文件
+    package.json  : 项目的相关依赖配置
+    README.md     : 项目的说明文件
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
-```
-项目使用的开发工具：
-  webstorm
-
-文件结构说明：
-  .editorconfig : 编辑器的配置
-  .eslintignore : eslint代码检查忽略的目录
-  .eslintrc.js  : eslint代码检查的配置
-      .eslintrc.js文件添加了： 'semi': ["error", "always"]  //用于代码中需要强中添加分号
-  .gitignore    : 向github上传文件时忽略的文件
-  .postcssrc.js : postcss模块用于处理浏览器的css代码的兼容，该文件
-  data.json     : mock的项目数据
-  index.html    : SPA项目的单页面的基本结构文件
-  package.json  : 项目的相关依赖配置
-  README.md     : 项目的说明文件
-
-项目目录说明：
-    build        :  webpack构建项目的编译时的基础配置目录
-    config       :  wepack构建项目的项目配置文件目录
-    node_modules :  项目依赖模块文件目录
-    rosource     :  项目资源文件目录
-    src          :  项目源码文件目录
-      common     :  项目通用文件目录
-        fonts    :  字体文件目录
-        js       :  js文件目录
-        stylus   :  styl文件目录
-      components :  项目组件目录
-      router     :  项目路由配置文件目录
-    static       :  项目静态文件目录
-         css     :  css静态文件目录（存放reset.css等）
+# 项目目录说明：
+      build        :  webpack构建项目的编译时的基础配置目录
+      config       :  wepack构建项目的项目配置文件目录
+      node_modules :  项目依赖模块文件目录
+      rosource     :  项目资源文件目录
+      src          :  项目源码文件目录
+        common     :  项目通用文件目录
+          fonts    :  字体文件目录
+          js       :  js文件目录
+          stylus   :  styl文件目录
+        components :  项目组件目录
+        router     :  项目路由配置文件目录
+      static       :  项目静态文件目录
+           css     :  css静态文件目录（存放reset.css等）
 
 
-项目中使用到的技术与方法:
-  svg图片制作为字体图标，并引入此字体文件。
-  mock后台数据
-  stylus：css预处理器
-  eslint：代码静态检查
-  reset.css ：初始化代码样式
-  webpack ：项目模块构建工具
-  vue-cli : 构建webpack项目 vue init webpack eapp
-  Vue2.0 + Vue-router + vue-resource
-
-
-项目开发中遇到的异常：
+# 项目开发中遇到的异常：
     ① 异常：
        * !!vue-style-loader!css-loader?{"minimize":false,"sourceMap":false}!../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-1d57e5ea","scoped":false,"hasInlineConfig":false}!stylus-loader?{"sourceMap":false}!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./a.vue in ./src/components/a.vue
        To install it, you can run: npm install --save !!vue-style-loader!css-loader?{"minimize":false,"sourceMap":false}!../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-1d57e5ea","scoped":false,"hasInlineConfig":false}!stylus-loader?{"sourceMap":false}!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./a.vue
        解决方式：
           npm install stylus stylus-loader --save-dev
 
-项目开发步骤：
+# 项目开发步骤：
      1.需求分析
           分析了解项目的需要开发的功能模块。
      2.资源准备
@@ -173,77 +151,75 @@ npm test
                   实现效果：
                      可以将当前商品添加到购物车。
                      用户可以切换展示商品评价信息列表。
-开发心得：
-(一)Vue父子组件通信：
-    ①父子传值props
-        子组件不能修改props传递的属性值。
-        只能通过自定义事件，通过父组件修改子组件的值。
-    ②父子传递对象props
-        子组件中允许直接修改传递对象的值并能够反映到父组件上。
-        也可以通过自定义事件，通过父组件修改子组件的值。
-        但是：如果此对象需要添加新的属性时，必须使用
-          import Vue from 'vue';Vue.set(对象名，'属性名’,属性初始值);才能将添加的对象属性反映到组件视图上。
+# 开发心得：
+    (一)Vue父子组件通信：
+        ①父子传值props
+            子组件不能修改props传递的属性值。
+            只能通过自定义事件，通过父组件修改子组件的值。
+        ②父子传递对象props
+            子组件中允许直接修改传递对象的值并能够反映到父组件上。
+            也可以通过自定义事件，通过父组件修改子组件的值。
+            但是：如果此对象需要添加新的属性时，必须使用
+              import Vue from 'vue';Vue.set(对象名，'属性名’,属性初始值);才能将添加的对象属性反映到组件视图上。
 
-(二)等宽等高布局：
-     .avatar-wrapper
-        position: relative;
-        width: 100%;
-        height: 0;
-        padding-top:100%;
-        .avatar
-          position: absolute
-          left: 0
-          top: 0
-          width: 100%;
-          height: 100%;
-    注释：
-      padding-top:100%或者padding-bottom:100%是依据width来进行计算的
+    (二)等宽等高布局：
+         .avatar-wrapper
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top:100%;
+            .avatar
+              position: absolute
+              left: 0
+              top: 0
+              width: 100%;
+              height: 100%;
+        注释：
+          padding-top:100%或者padding-bottom:100%是依据width来进行计算的
 
-(三)1px的处理
-  border-bottom-1px($color)
-    position relative
-    &:after
-      display block
-      position absolute
-      left 0
-      bottom 0
-      width 100%
-      content ""
-      border-top 1px solid $color
+    (三)1px的处理
+      border-bottom-1px($color)
+        position relative
+        &:after
+          display block
+          position absolute
+          left 0
+          bottom 0
+          width 100%
+          content ""
+          border-top 1px solid $color
 
-  @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
-    .border-1px
-      &::after
-        -webkit-transform: scaleY(0.7);
-        transform scaleY(0.7)
+      @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+        .border-1px
+          &::after
+            -webkit-transform: scaleY(0.7);
+            transform scaleY(0.7)
 
-  @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
-    .border-1px
-      &::after
-        -webkit-transform: scaleY(0.5);
-        transform scaleY(0.5)
+      @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+        .border-1px
+          &::after
+            -webkit-transform: scaleY(0.5);
+            transform scaleY(0.5)
 
-(四)sticky footers布局(页面内容长度不够时，页脚块在窗口的底部，如果内容足够长，页脚块被内容向下推送。)
-  <div>
-    <div class='wrapper clearfix'>
-        <!-- min-height:100% -->
-        <div class='main'>
-          <!-- 填充内容  padding-bottom一定的距离-->
-        </div>
+    (四)sticky footers布局(页面内容长度不够时，页脚块在窗口的底部，如果内容足够长，页脚块被内容向下推送。)
+      <div>
+        <div class='wrapper clearfix'>
+            <!-- min-height:100% -->
+            <div class='main'>
+              <!-- 填充内容  padding-bottom一定的距离-->
+            </div>
+          </div>
+          <div class='close'>
+             <!-- 页脚块展示的内容 -->
+          </div>
       </div>
-      <div class='close'>
-         <!-- 页脚块展示的内容 -->
-      </div>
-  </div>
 
-  <style>
-    .wrapper
-      width 100%
-      min-heigh 100%
-      .main
-        padding-bottom 120px
-    .close
-      margin-top -120px
-  </style>
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+      <style>
+        .wrapper
+          width 100%
+          min-heigh 100%
+          .main
+            padding-bottom 120px
+        .close
+          margin-top -120px
+      </style>
